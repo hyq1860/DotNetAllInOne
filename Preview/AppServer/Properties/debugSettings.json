@@ -1,0 +1,8 @@
+{
+  "profiles": [
+    {
+      "name": "web",
+      "workingDirectory": "D:\\github\\DotNetAllInOne\\AppServer"
+    }
+  ]
+}
