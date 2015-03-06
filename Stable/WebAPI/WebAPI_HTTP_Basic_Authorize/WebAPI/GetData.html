@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+</head>
+<body>
+    <div>
+        <textarea cols="10" rows="10" id="textareaDataContent"></textarea><br />
+        <input type="button" name="btnGetData" id="btnGetData" value="Get Data From ASP.NET Web API" />
+    </div>
+
+    <script src="/Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $("#btnGetData").bind("click", AjaxGetData());
+        });
+
+        function AjaxGetData() {
+            $.ajax({
+                url: "/api/users",
+                cache: false,
+                statusCode: {
+                    401: function () {
+                        window.location.href = '/home/login';
+                    },
+                    200: function (data) {
+                        $("#textareaDataContent").text(data);
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

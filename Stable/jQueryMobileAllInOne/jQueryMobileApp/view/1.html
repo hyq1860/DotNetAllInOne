@@ -1,0 +1,23 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>orientationchange demo</title>
+    <link rel="stylesheet" href="../css/jquery.mobile-1.4.3.min.css" />
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/jquery.mobile-1.4.3.min.js"></script>
+</head>
+<body>
+    <h1 id="orientation">orientationchange Not Supported on this Device.</h1>
+    <script>
+        // Bind an event to window.orientationchange that, when the device is turned,
+        // gets the orientation and displays it to on screen.
+        $(window).on("orientationchange", function (event) {
+            $("#orientation").text("This device is in " + event.orientation + " mode!");
+        });
+        // You can also manually force this event to fire.
+        //$(window).orientationchange();
+    </script>
+</body>
+</html>

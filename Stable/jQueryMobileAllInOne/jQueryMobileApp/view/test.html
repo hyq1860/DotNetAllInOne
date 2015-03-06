@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <!--
+    Copyright (c) 2014 by Erik (http://codepen.io/ezanker/pen/gHtpJ)
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+    -->
+
+    <title>CodePen - A Pen by ezanker</title>
+
+    <link rel='stylesheet prefetch' href='http://code.jquery.com/mobile/git/jquery.mobile-git.css'>
+
+    <script>
+        window.open = function () { };
+        window.print = function () { };
+        // Support hover state for mobile.
+        if (false) {
+            window.ontouchstart = function () { };
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <div id="first" data-role="page">
+
+        <div data-role="header" data-position="fixed" data-tap-toggle="false">
+            <h1>iScroll-ify Me Please!</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+
+            <div id="scroll-wrap">
+                <ul id="my-list" data-role="listview"></ul>
+            </div>
+        </div>
+
+        <div data-role="footer" data-tap-toggle="false" data-position="fixed">
+
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#" data-icon="gear"></a></li>
+                    <li><a href="#" data-icon="home"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="second" data-role="page">
+
+        <div data-role="header" data-position="fixed" data-tap-toggle="false">
+
+            <a href="#first" data-role="button" data-icon="arrow-l" data-iconpos="notext">Home</a>
+
+            <h1>Scroll Me <span id="id"></span></h1>
+        </div>
+
+        <div role="main">
+
+            <div id="scroll-wrap2">
+                <ul id="my-list2" data-role="listview"></ul>
+            </div>
+        </div>
+
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#" data-icon="check"></a></li>
+                    <li><a href="#" data-icon="star"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src='http://code.jquery.com/jquery-2.1.1.min.js'></script>
+    <script src='http://code.jquery.com/mobile/git/jquery.mobile-git.js'></script>
+    <script src='https://rawgit.com/CameronAskew/jquery.mobile.paramsHandler/master/src/jquery.mobile.paramsHandler-1.4.2.js'></script>
+    <script src='https://rawgit.com/cubiq/iscroll/master/build/iscroll.js'></script>
+
+    <script src='/assets/common/localstorage.js'></script>
+    <script src='/assets/post/scroll/remember_scroll.js'></script>
+    <script>RememberScroll.init();</script>
+
+    <script>
+        if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage('resize', "*");
+        }
+    </script>
+
+    <script>
+        $(document).on("pagecontainershow", function () {
+            ScaleContentToDevice();
+        });
+        $(window).on("resize orientationchange", function () {
+            ScaleContentToDevice();
+        });
+
+        function ScaleContentToDevice() {
+
+            scroll(0, 0);
+            var content = $.mobile.getScreenHeight() - $(".ui-header").outerHeight() - $(".ui-footer").outerHeight() - $(".ui-content").outerHeight() + $(".ui-content").height();
+
+            $(".ui-content").height(content);
+        }
+
+        $(function () {
+
+            $.mobile.paramsHandler.addPage('second', ['id'], null, secondLoad);
+            $.mobile.paramsHandler.init();
+        });
+
+        $(document).on('pagecreate', '#first', function () {
+
+            // simulate an AJAX call
+            setTimeout(function () {
+
+                var text = '';
+                var list = $('#my-list').empty();
+                for (var i = 0; i < 100; i++) {
+                    text += '<li><a>data loaded from AJAX ' + i + '</a></li>';
+                }
+
+                list.append(text).listview('refresh');
+                var page1Scroll = initScroll("#scroll-wrap");
+
+            }, 1000);
+        });
+
+        var page2Scroll;
+        function secondLoad(parms) {
+
+            $('#id').text(parms.id);
+
+            // simulate a long AJAX call
+            setTimeout(function () {
+
+                var text = '';
+                for (i = 0; i < 100; i++) {
+                    text += '<li><a href="#"><img src="http://images.nike.com/is/image/DotCom/THN_PS/Nike-Strike-Football-SC2140_144_A.jpg?fmt=jpg&qty=85&wid=620&hei=620"><h2>data loaded from AJAX ' + parms.id + '</h2></a></li>';
+                }
+
+                $('#my-list2').empty().append(text).listview('refresh');
+                if (!page2Scroll)
+                    page2Scroll = initScroll("#scroll-wrap2");
+
+            }, 2500);
+        }
+
+        function initScroll(elmId) {
+
+            var $this = $(elmId);
+
+            $this.css('position', 'absolute')
+              .css('overflow', 'hidden')
+              .css('top', '0')
+              .css('bottom', '0')
+              .css('left', '0')
+              .css('width', '100%')
+              .css('margin-bottom', '48px')
+              .css('margin-top', '48px');
+
+            return new IScroll($this.get(0), {
+                eventPassthrough: false,
+                scrollX: false,
+                scrollY: true,
+                preventDefault: false,
+                scrollbars: true,
+                mouseWheel: true,
+                interactiveScrollbars: true,
+                shrinkScrollbars: 'clip',
+                useTransition: false,
+                bindToWrapper: true,
+                bounceEasing: 'elastic',
+                bounceTime: 1200,
+                probeType: 3, // watch the scroller
+                fadeScrollbars: false
+            });
+        }
+        //@ sourceURL=pen.js
+    </script>
+
+</body>
+
+</html>

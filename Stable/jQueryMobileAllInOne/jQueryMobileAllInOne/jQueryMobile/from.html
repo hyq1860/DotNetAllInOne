@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../Scripts/jquery.mobile/jquery.mobile-1.4.3.min.css" />
+    <script src="../Scripts/jquery-1.8.2.min.js"></script>
+    <script src="../Scripts/jquery.mobile/jquery.mobile-1.4.3.min.js"></script>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="header" data-position="fixed" data-tap-toggle="false">
+            <h1>header</h1>
+        </div>
+        <!-- /header -->
+        <div role="main" class="ui-content" id="wrapper">
+            <input type="text" name="name"/>
+            <input type="number" name="numberinput"/>
+            <input type="file" name="fileinput" />
+            <input type="password" name="passwordinput" />
+            <input type="text" placeholder="请输入" name="placeholderinput" />
+            <input type="text" disabled="disabled" placeholder="请输入" name="disabledinput" />
+            
+            
+            <div data-role="fieldcontain">
+                <label for="userName">用户名：</label>
+                <input type="text" name="userName" placeholder="请输入用户名" />
+                <label for="userPassword">密码：</label>
+                <input type="password" name="userPassword" />
+                <input type="button" name="submit" data-inline="true" value="提交"/>
+                <input type="button" name="reset" data-inline="true" value="重置" />
+            </div>
+
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+            <h4>foot</h4>
+        </div>
+        <!-- /footer -->
+    </div>
+</body>
+</html>

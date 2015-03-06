@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="../css/jquery.mobile-1.4.3.min.css" />
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/jquery.mobile-1.4.3.min.js"></script>
+    <script src="../js/iscroll-probe.js"></script>
+    <script type="text/javascript">
+        $(document).on("pagecontainershow", function () {
+            ScaleContentToDevice();
+        });
+        $(window).on("resize orientationchange", function () {
+            ScaleContentToDevice();
+        });
+
+        function ScaleContentToDevice() {
+
+            scroll(0, 0);
+            var content = $.mobile.getScreenHeight() - $(".ui-header").outerHeight() - $(".ui-footer").outerHeight() - $(".ui-content").outerHeight() + $(".ui-content").height();
+
+            $(".ui-content").height(content);
+        }
+
+        //$(function () {
+
+        //    //$.mobile.paramsHandler.addPage('second', ['id'], null, secondLoad);
+        //    //$.mobile.paramsHandler.init();
+        //});
+
+
+        var position;
+        $(document).on('pagecreate', '#first', function () {
+
+            // simulate an AJAX call
+            setTimeout(function () {
+                position = document.getElementById('position');
+                var text = '';
+                var list = $('#my-list').empty();
+                for (i = 0; i < 50; i++) {
+                    text += '<li><a>data loaded from AJAX ' + i + '</a></li>';
+                }
+
+                list.append(text).listview('refresh');
+                var page1Scroll = initScroll("#scroll-wrap");
+                page1Scroll.on('scrollEnd', function () {
+                    var y = this.y >> 0;
+                    position.innerHTML = y;
+                    console.log(y);
+                });
+            }, 1000);
+        });
+
+        //var page2Scroll;
+        //function secondLoad(parms) {
+
+        //    $('#id').text(parms.id);
+
+        //    // simulate a long AJAX call
+        //    setTimeout(function () {
+
+        //        var text = '';
+        //        for (i = 0; i < 100; i++) {
+        //            text += '<li><a href="#"><img src="http://images.nike.com/is/image/DotCom/THN_PS/Nike-Strike-Football-SC2140_144_A.jpg?fmt=jpg&qty=85&wid=620&hei=620"><h2>data loaded from AJAX ' + parms.id + '</h2></a></li>';
+        //        }
+
+        //        $('#my-list2').empty().append(text).listview('refresh');
+        //        if (!page2Scroll)
+        //            page2Scroll = initScroll("#scroll-wrap2");
+
+        //    }, 2500);
+        //}
+
+        function initScroll(elmId) {
+
+            var $this = $(elmId);
+
+            $this.css('position', 'absolute')
+                .css('overflow', 'hidden')
+                .css('top', '0')
+                .css('bottom', '0')
+                .css('left', '0')
+                .css('width', '100%')
+              .css('margin-bottom', '48px')
+              .css('margin-top', '48px');
+
+
+            return new IScroll($this.get(0), {
+                eventPassthrough: false,
+                scrollX: false,
+                scrollY: true,
+                preventDefault: false,
+                scrollbars: true,
+                mouseWheel: false,
+                interactiveScrollbars: true,
+                shrinkScrollbars: 'clip',
+                useTransition: false,
+                bindToWrapper: true,
+                bounceEasing: 'elastic',
+                bounceTime: 1200,
+                probeType: 3, // watch the scroller
+                fadeScrollbars: false
+            });
+        }
+
+
+    </script>
+</head>
+<body>
+    <div id="first" data-role="page">
+
+        <div data-role="header" data-position="fixed" data-tap-toggle="false">
+            <h1>Y position: <strong id="position">0</strong></h1>
+        </div>
+
+        <div role="main" class="ui-content">
+
+            <div id="scroll-wrap">
+                <ul id="my-list" data-role="listview"></ul>
+            </div>
+        </div>
+
+        <div data-role="footer" data-tap-toggle="false" data-position="fixed">
+
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#" data-icon="gear"></a></li>
+                    <li><a href="#" data-icon="home"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--<div id="second" data-role="page">
+
+        <div data-role="header" data-position="fixed" data-tap-toggle="false">
+
+            <a href="#first" data-role="button" data-icon="arrow-l" data-iconpos="notext">Home</a>
+
+            <h1>Scroll Me <span id="id"></span></h1>
+        </div>
+
+        <div role="main">
+
+            <div id="scroll-wrap2">
+                <ul id="my-list2" data-role="listview"></ul>
+            </div>
+        </div>
+
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#" data-icon="check"></a></li>
+                    <li><a href="#" data-icon="star"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>-->
+
+
+
+</body>
+</html>

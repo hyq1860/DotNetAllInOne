@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript" src="Scripts/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript">
+        function load() {
+            $.ajax({
+                url: "http://localhost:45579/api/demo/getusers",
+                type: "GET",
+                dataType: "jsonp",
+                success: function (result) {
+                    alert(result);
+                }
+            });
+        }
+        $(load);
+    </script>
+</head>
+<body>
+</body>
+</html>

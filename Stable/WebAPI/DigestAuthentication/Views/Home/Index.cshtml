@@ -1,0 +1,47 @@
+﻿@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#details').click(function () {
+                $('#employee').empty();
+
+                $.getJSON("api/employees/12345", function (employee) {
+                    var now = new Date();
+                    var ts = now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds();
+
+                    var content = employee.Id + ' ' + employee.Name + ' ' + ts;
+
+                    $('#employee').append($('<li/>', { text: content }));
+                });
+            });
+        });
+    function InvokeWebAPI() {
+        alert("inside makeRequest()");
+        var settings = {
+            type: "GET",
+            url: "api/employees/12345",
+            dataType: "json",
+            error: function (XHR, textStatus, errorThrown) {
+                alert("XHR=" + XHR + "\ntextStatus=" + textStatus + "\nerrorThrown=" + errorThrown);
+            },
+            success: function (data, textStatus) {
+                $("body").append(data);
+            },
+            headers: {
+                "Authorization": "Digest username=\"123\", realm=\"RealmOfBadri\", nonce=\"f50fab1632925a54555520891de97016\", uri=\"/api/employees/123451\", response=\"e20247e097b9edfaedabf5107a378513\", qop=auth, nc=00000001, cnonce=\"e03dbac005c56d41\"",
+            }
+        };
+        $.ajax(settings);
+    }
+
+    </script>
+}
+<div>
+    <div>
+        <h1>Employees Listing</h1>
+        <input id="details" type="button" value="Details" />
+        <input type="button" name="Invoke" value="InvokeWebAPI" onclick="InvokeWebAPI()"/>
+    </div>
+    <div>
+        <ul id="employee" />
+    </div>
+</div>
