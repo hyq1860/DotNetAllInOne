@@ -10,13 +10,20 @@ using System.Web.Http.Cors;
 
 namespace MLG.WebAPI.WebHost.Controllers
 {
+    [CustomAuthorize]
     public class DemoController : ApiController
     {
         public IEnumerable<string> GetUsers()
         {
-            yield return HttpContext.Current.User.Identity.Name;
-            yield return Thread.CurrentPrincipal.Identity.Name;
-            yield return this.User.Identity.Name;
+            yield return HttpContext.Current.User.Identity.Name+"\n";
+            yield return Thread.CurrentPrincipal.Identity.Name+"\n";
+            yield return this.User.Identity.Name+"\n";
         }
+
+        
+        public IEnumerable<String> Index()
+        {
+            return new List<string>() {"1", "2", "3"};
+        } 
     }
 }

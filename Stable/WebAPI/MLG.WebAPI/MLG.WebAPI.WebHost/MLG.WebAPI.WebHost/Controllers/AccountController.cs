@@ -52,5 +52,14 @@ namespace MLG.WebAPI.WebHost.Controllers
             }
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Login(FormCollection fol)
+        {
+            ///此处为了演示简化登录过程
+            ///可以在此处扩展验证用户名或者密码是否正确
+            System.Web.Security.FormsAuthentication.SetAuthCookie(fol["username"], false);
+            return Redirect("/HTMLPage5.htm");
+        }
     }
 }
