@@ -82,9 +82,18 @@ namespace RazorEngineDemo
             var service = RazorEngineService.Create(config);
 
             Engine.Razor = service;
-
-            var result = service.RunCompile(template02, "ceshi", typeof (ReportModel),
-                new ReportModel() {ReportId = "报告编号",Name="hahahha", Title = "11", Photos = new List<string>() {"111111", "222222"}});
+            var result = string.Empty;
+            if (service.IsTemplateCached("ceshi", null))
+            {
+                result = service.Run("ceshi", typeof(ReportModel),
+                new ReportModel() { ReportId = "报告编号", Name = "hahahha", Title = "11", Photos = new List<string>() { "111111", "222222" } });
+            }
+            else
+            {
+                result = service.RunCompile(template02, "ceshi", typeof(ReportModel),
+                new ReportModel() { ReportId = "报告编号", Name = "hahahha", Title = "11", Photos = new List<string>() { "111111", "222222" } });
+            }
+            
 
             Console.WriteLine(result);
 
