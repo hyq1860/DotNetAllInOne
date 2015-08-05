@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -14,14 +15,23 @@ namespace RazorEngineDemo
     /// </summary>
     public class RazorTemplateManager : ITemplateManager
     {
+        private readonly string baseTemplatePath;
+
+        public RazorTemplateManager(string baseTemplatePath)
+        {
+            this.baseTemplatePath = baseTemplatePath;
+        }
+
         public ITemplateSource Resolve(ITemplateKey key)
         {
             // Resolve your template here (ie read from disk)
             // if the same templates are often read from disk you propably want to do some caching here.
             //此处获取模板地址
-            string template = "Hello @Model.Name, welcome to RazorEngine!";
+            string templateName = key.Name;
+            string path = Path.Combine(baseTemplatePath, templateName);
+            string content = File.ReadAllText(path);
             // Provide a non-null file to improve debugging
-            return new LoadedTemplateSource(template, null);
+            return new LoadedTemplateSource(content, path);
         }
 
         public ITemplateKey GetKey(string name, ResolveType resolveType, ITemplateKey context)

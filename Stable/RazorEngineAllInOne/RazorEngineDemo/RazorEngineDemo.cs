@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Dynamic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using RazorEngine;
@@ -76,21 +77,31 @@ namespace RazorEngineDemo
             //config.EncodedStringFactory=new HtmlEncodedStringFactory();
             config.Debug = true;
 
-            config.TemplateManager=new RazorTemplateManager();
+            //config.TemplateManager = new RazorTemplateManager(Environment.CurrentDirectory.Replace("\\bin","") + "\\Views");
+
+            config.TemplateManager= new DelegateTemplateManager(name =>
+            {
+                string resourcePath = string.Format(templateFolderPath, name);
+                var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourcePath);
+                using (StreamReader reader = new StreamReader(stream))
+                {
+                    return reader.ReadToEnd();
+                }
+            });
             config.CachingProvider=new DefaultCachingProvider();
             
             var service = RazorEngineService.Create(config);
 
             Engine.Razor = service;
             var result = string.Empty;
-            if (service.IsTemplateCached("ceshi", null))
+            if (service.IsTemplateCached("template02.cshtml", null))
             {
-                result = service.Run("ceshi", typeof(ReportModel),
+                result = service.Run("template02.cshtml", typeof(ReportModel),
                 new ReportModel() { ReportId = "报告编号", Name = "hahahha", Title = "11", Photos = new List<string>() { "111111", "222222" } });
             }
             else
             {
-                result = service.RunCompile(template02, "ceshi", typeof(ReportModel),
+                result = service.RunCompile(template02, "template02.cshtml", typeof(ReportModel),
                 new ReportModel() { ReportId = "报告编号", Name = "hahahha", Title = "11", Photos = new List<string>() { "111111", "222222" } });
             }
             
