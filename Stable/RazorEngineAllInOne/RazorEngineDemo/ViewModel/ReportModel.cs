@@ -14,8 +14,15 @@ namespace RazorEngineDemo.ViewModel
         public string ReportId { get; set; }
 
         /// <summary>
+        /// Name
+        /// </summary>
+        public string Name { get; set; }
+
+        /// <summary>
         /// 报告标题
         /// </summary>
         public string Title { get; set; }
+
+        public List<string> Photos { get; set; } 
     }
 }

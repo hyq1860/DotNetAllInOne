@@ -10,5 +10,16 @@
 </head>
 <body>
     @Model.ReportId
+    @foreach (var photo in Model.Photos)
+    {
+        if (photo == "111111")
+        {
+            <img src="@photo" />
+        }
+        else
+        {
+            <h1>@photo</h1>
+        }
+    }
 </body>
 </html>
