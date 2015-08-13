@@ -1,0 +1,110 @@
+﻿@using System
+@using System.Linq
+@using System.Text
+@using RazorEngine
+@using RazorEngineDemo.ViewModel
+@inherits RazorEngine.Templating.TemplateBase<TaoBaoMapData>
+
+@{
+    //一级分类
+    var groupData = Model.TaoBaoCheckItems.GroupBy(s => s.TaoBaoReportTCode);
+    var sb=new StringBuilder();
+    foreach (var group in groupData)
+    {
+        sb.AppendFormat("#region {0}\n", group.FirstOrDefault().TaoBaoReportTypeName);
+        sb.AppendFormat("private TbCheckModule Convert_{0}(CarReportModel carReportModel)\n", group.Key);
+        sb.Append("{\n");
+        sb.Append("var tbCheckModule = new TbCheckModule();\n");
+        sb.AppendFormat("tbCheckModule.Name = \"{0}\";\n", group.FirstOrDefault().TaoBaoReportTypeName);
+        
+        
+        foreach (var item in group)
+        {
+            //规则
+            var rules = Model.TaoBaoCheckItemRules.Where(s => s.TaoBaoPartCode == item.TaoBaoPartCode && s.TaoBaoReportTCode == item.TaoBaoReportTCode)
+                .GroupBy(s=>s.TaoBaoPartCode);
+            if (rules.Any())
+            {
+                foreach (var group1 in rules)
+                {
+                    sb.AppendFormat("#region {0}\n", item.CheckItemName);
+                    //项目
+                    sb.AppendFormat("TbCheckItemDetail tbCheckItemDetail_{0} = new TbCheckItemDetail();\n", item.TaoBaoPartCode);
+                    sb.AppendFormat("tbCheckItemDetail_{0}.Name=\"{1}\";\n", group1.Key, item.CheckItemName);
+                    if (item.IsMatch == "是")
+                    {
+                        sb.AppendFormat("var checkInfoList_{0} = carReportModel.CheckInfoTotalList.Where(\n", item.TaoBaoPartCode);
+                        var index = 0;
+                        foreach (var group2 in group1)
+                        {
+                            if (index == 0)
+                            {
+                                if (group1.Count() == 1)
+                                {
+                                    sb.AppendFormat("s =>(s.PartCode.ToUpper() == \"{0}\" && s.PlaceCode.ToUpper() == \"{1}\" && s.DefectCode.ToUpper() == \"{2}\" && s.DValueCode.ToUpper()==\"{3}\")\n",
+                                        group2.PartCode, group2.PlaceCode, group2.DefectCode, group2.DValueCode);
+                                }
+                                else
+                                {
+                                    sb.AppendFormat("s =>(s.PartCode.ToUpper() == \"{0}\" && s.PlaceCode.ToUpper() == \"{1}\" && s.DefectCode.ToUpper() == \"{2}\" && s.DValueCode.ToUpper()==\"{3}\") ||\n",
+                                        group2.PartCode, group2.PlaceCode, group2.DefectCode, group2.DValueCode);
+                                }
+                            }
+                            else if (index < group1.Count() - 1)
+                            {
+                                sb.AppendFormat("(s.PartCode.ToUpper() == \"{0}\" && s.PlaceCode.ToUpper() == \"{1}\" && s.DefectCode.ToUpper() == \"{2}\" && s.DValueCode.ToUpper()==\"{3}\") ||\n",
+                                    group2.PartCode, group2.PlaceCode, group2.DefectCode, group2.DValueCode);
+                            }
+                            else if (index == group1.Count() - 1)
+                            {
+                                sb.AppendFormat("(s.PartCode.ToUpper() == \"{0}\" && s.PlaceCode.ToUpper() == \"{1}\" && s.DefectCode.ToUpper() == \"{2}\" && s.DValueCode.ToUpper()==\"{3}\")\n",
+                                    group2.PartCode, group2.PlaceCode, group2.DefectCode, group2.DValueCode);
+                            }
+                            index++;
+                        }
+                        //c6 = c6.Substring(0, c6.Length - 2);
+                        sb.Append(");\n");
+                        sb.AppendFormat("var checkResult_{0} = 4;\n", item.TaoBaoPartCode);
+                        sb.AppendFormat("if (checkInfoList_{0}.Any())\n", item.TaoBaoPartCode);
+                        sb.Append("{\n");
+                        sb.AppendFormat("checkResult_{0} = checkInfoList_{0}.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;\n", item.TaoBaoPartCode);
+                        sb.Append("}\n");
+                        sb.Append("else\n");
+                        sb.Append("{\n");
+                        sb.AppendFormat("//没有认为是没问题\n checkResult_{0} = 1;\n", item.TaoBaoPartCode);
+                        sb.Append("}\n");
+                        sb.AppendFormat("var tbCheckItemDesc_{0} = tbCheckModule.TbCheckItemDescs.FirstOrDefault(s => s.Key == checkResult_{0});\n", item.TaoBaoPartCode);
+                        sb.AppendFormat("if (tbCheckItemDesc_{0} != null)\n", item.TaoBaoPartCode);
+                        sb.AppendFormat("tbCheckItemDetail_{0}.CheckResult = tbCheckItemDesc_{0}.Key;\n", item.TaoBaoPartCode);
+                    }
+                    else
+                    {
+                        sb.AppendFormat("tbCheckItemDetail_{0}.CheckResult = {1};\n", item.TaoBaoPartCode, 4);
+                    }
+                    sb.AppendFormat("tbCheckModule.TbCheckItemDetails.Add(tbCheckItemDetail_{0});\n", item.TaoBaoPartCode);
+                    sb.Append("#endregion\n");
+                    sb.Append("\n");
+                }
+            }
+            else
+            {
+                sb.AppendFormat("#region {0}\n", item.CheckItemName);
+                //项目
+                sb.AppendFormat("TbCheckItemDetail tbCheckItemDetail_{0} = new TbCheckItemDetail();\n", item.TaoBaoPartCode);
+                sb.AppendFormat("tbCheckItemDetail_{0}.Name=\"{1}\";\n", item.TaoBaoPartCode, item.CheckItemName);
+                
+                sb.AppendFormat("tbCheckItemDetail_{0}.CheckResult = {1};\n", item.TaoBaoPartCode, 4);
+
+                sb.AppendFormat("tbCheckModule.TbCheckItemDetails.Add(tbCheckItemDetail_{0});\n", item.TaoBaoPartCode);
+                sb.Append("#endregion\n");
+                sb.Append("\n");
+            }
+        }
+        sb.Append("return tbCheckModule;");
+        sb.Append("}\n");
+        sb.Append("#endregion\n");
+        sb.Append("\n");
+    }
+}
+
+@sb.ToString()

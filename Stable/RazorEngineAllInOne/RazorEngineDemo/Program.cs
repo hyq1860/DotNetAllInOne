@@ -24,6 +24,12 @@ namespace RazorEngineDemo
             
             try
             {
+                TaoBaoAutoReportConvert taoBaoAutoReportConvert=new TaoBaoAutoReportConvert();
+                taoBaoAutoReportConvert.GetTaoBaoCheckItems();
+
+                taoBaoAutoReportConvert.GeTaoBaoCheckItemRules();
+                taoBaoAutoReportConvert.AutoCodeGenerate();
+                return;
                 RazorEngineDemo razorEngineDemo=new RazorEngineDemo();
 
                 //razorEngineDemo.RunCompile01();

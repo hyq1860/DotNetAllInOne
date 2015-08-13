@@ -23,6 +23,8 @@ namespace RazorEngineDemo.ViewModel
         /// </summary>
         public string Title { get; set; }
 
-        public List<string> Photos { get; set; } 
+        public List<string> Photos { get; set; }
+
+        public int Count { get; set; }
     }
 }

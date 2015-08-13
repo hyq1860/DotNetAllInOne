@@ -97,12 +97,12 @@ namespace RazorEngineDemo
             if (service.IsTemplateCached("template02.cshtml", null))
             {
                 result = service.Run("template02.cshtml", typeof(ReportModel),
-                new ReportModel() { ReportId = "报告编号", Name = "hahahha", Title = "11", Photos = new List<string>() { "111111", "222222" } });
+                new ReportModel() { ReportId = "报告编号", Name = "hahahha", Title = "11", Photos = new List<string>() { "111111", "222222" },Count=13 });
             }
             else
             {
                 result = service.RunCompile(template02, "template02.cshtml", typeof(ReportModel),
-                new ReportModel() { ReportId = "报告编号", Name = "hahahha", Title = "11", Photos = new List<string>() { "111111", "222222" } });
+                new ReportModel() { ReportId = "报告编号", Name = "hahahha", Title = "11", Photos = new List<string>() { "111111", "222222" }, Count = 13 });
             }
             
 
