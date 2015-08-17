@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorEngineDemo", "RazorEngineDemo\RazorEngineDemo.csproj", "{241B5D22-109A-4DC4-8DFD-72299E6C7C12}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorEngineWebDemo", "RazorEngineWebDemo\RazorEngineWebDemo.csproj", "{D881CA93-708E-48CA-A235-64DC65B3C1A0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{241B5D22-109A-4DC4-8DFD-72299E6C7C12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{241B5D22-109A-4DC4-8DFD-72299E6C7C12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{241B5D22-109A-4DC4-8DFD-72299E6C7C12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D881CA93-708E-48CA-A235-64DC65B3C1A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D881CA93-708E-48CA-A235-64DC65B3C1A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D881CA93-708E-48CA-A235-64DC65B3C1A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D881CA93-708E-48CA-A235-64DC65B3C1A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

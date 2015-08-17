@@ -67,7 +67,7 @@
                         sb.AppendFormat("var checkResult_{0} = 4;\n", item.TaoBaoPartCode);
                         sb.AppendFormat("if (checkInfoList_{0}.Any())\n", item.TaoBaoPartCode);
                         sb.Append("{\n");
-                        sb.AppendFormat("checkResult_{0} = checkInfoList_{0}.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;\n", item.TaoBaoPartCode);
+                        sb.AppendFormat("checkResult_{0} = checkInfoList_{0}.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;\n", item.TaoBaoPartCode);
                         sb.Append("}\n");
                         sb.Append("else\n");
                         sb.Append("{\n");

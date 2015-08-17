@@ -18,7 +18,7 @@ s =>(s.PartCode.ToUpper() == "C015" && s.PlaceCode.ToUpper() == "P05" && s.Defec
 var checkResult_TBC001 = 4;
 if (checkInfoList_TBC001.Any())
 {
-checkResult_TBC001 = checkInfoList_TBC001.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC001 = checkInfoList_TBC001.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -44,7 +44,7 @@ s =>(s.PartCode.ToUpper() == "C016" && s.PlaceCode.ToUpper() == "P05" && s.Defec
 var checkResult_TBC002 = 4;
 if (checkInfoList_TBC002.Any())
 {
-checkResult_TBC002 = checkInfoList_TBC002.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC002 = checkInfoList_TBC002.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -70,7 +70,7 @@ s =>(s.PartCode.ToUpper() == "C017" && s.PlaceCode.ToUpper() == "P05" && s.Defec
 var checkResult_TBC003 = 4;
 if (checkInfoList_TBC003.Any())
 {
-checkResult_TBC003 = checkInfoList_TBC003.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC003 = checkInfoList_TBC003.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -96,7 +96,7 @@ s =>(s.PartCode.ToUpper() == "C015" && s.PlaceCode.ToUpper() == "P06" && s.Defec
 var checkResult_TBC004 = 4;
 if (checkInfoList_TBC004.Any())
 {
-checkResult_TBC004 = checkInfoList_TBC004.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC004 = checkInfoList_TBC004.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -122,7 +122,7 @@ s =>(s.PartCode.ToUpper() == "C016" && s.PlaceCode.ToUpper() == "P06" && s.Defec
 var checkResult_TBC005 = 4;
 if (checkInfoList_TBC005.Any())
 {
-checkResult_TBC005 = checkInfoList_TBC005.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC005 = checkInfoList_TBC005.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -148,7 +148,7 @@ s =>(s.PartCode.ToUpper() == "C017" && s.PlaceCode.ToUpper() == "P06" && s.Defec
 var checkResult_TBC006 = 4;
 if (checkInfoList_TBC006.Any())
 {
-checkResult_TBC006 = checkInfoList_TBC006.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC006 = checkInfoList_TBC006.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -175,7 +175,7 @@ s =>(s.PartCode.ToUpper() == "C026" && s.PlaceCode.ToUpper() == "P10" && s.Defec
 var checkResult_TBC007 = 4;
 if (checkInfoList_TBC007.Any())
 {
-checkResult_TBC007 = checkInfoList_TBC007.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC007 = checkInfoList_TBC007.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -202,7 +202,7 @@ s =>(s.PartCode.ToUpper() == "C026" && s.PlaceCode.ToUpper() == "P08" && s.Defec
 var checkResult_TBC008 = 4;
 if (checkInfoList_TBC008.Any())
 {
-checkResult_TBC008 = checkInfoList_TBC008.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC008 = checkInfoList_TBC008.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -228,7 +228,7 @@ s =>(s.PartCode.ToUpper() == "C024" && s.PlaceCode.ToUpper() == "P10" && s.Defec
 var checkResult_TBC009 = 4;
 if (checkInfoList_TBC009.Any())
 {
-checkResult_TBC009 = checkInfoList_TBC009.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC009 = checkInfoList_TBC009.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -254,7 +254,7 @@ s =>(s.PartCode.ToUpper() == "C024" && s.PlaceCode.ToUpper() == "P08" && s.Defec
 var checkResult_TBC010 = 4;
 if (checkInfoList_TBC010.Any())
 {
-checkResult_TBC010 = checkInfoList_TBC010.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC010 = checkInfoList_TBC010.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -279,7 +279,7 @@ s =>(s.PartCode.ToUpper() == "C024" && s.PlaceCode.ToUpper() == "P09" && s.Defec
 var checkResult_TBC011 = 4;
 if (checkInfoList_TBC011.Any())
 {
-checkResult_TBC011 = checkInfoList_TBC011.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC011 = checkInfoList_TBC011.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -304,7 +304,7 @@ s =>(s.PartCode.ToUpper() == "C024" && s.PlaceCode.ToUpper() == "P07" && s.Defec
 var checkResult_TBC012 = 4;
 if (checkInfoList_TBC012.Any())
 {
-checkResult_TBC012 = checkInfoList_TBC012.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC012 = checkInfoList_TBC012.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -344,7 +344,7 @@ s =>(s.PartCode.ToUpper() == "C004" && s.PlaceCode.ToUpper() == "P00" && s.Defec
 var checkResult_TBC013 = 4;
 if (checkInfoList_TBC013.Any())
 {
-checkResult_TBC013 = checkInfoList_TBC013.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC013 = checkInfoList_TBC013.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -376,7 +376,7 @@ s =>(s.PartCode.ToUpper() == "C012" && s.PlaceCode.ToUpper() == "P10" && s.Defec
 var checkResult_TBC014 = 4;
 if (checkInfoList_TBC014.Any())
 {
-checkResult_TBC014 = checkInfoList_TBC014.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC014 = checkInfoList_TBC014.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -408,7 +408,7 @@ s =>(s.PartCode.ToUpper() == "C012" && s.PlaceCode.ToUpper() == "P08" && s.Defec
 var checkResult_TBC015 = 4;
 if (checkInfoList_TBC015.Any())
 {
-checkResult_TBC015 = checkInfoList_TBC015.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC015 = checkInfoList_TBC015.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -438,7 +438,7 @@ s =>(s.PartCode.ToUpper() == "C012" && s.PlaceCode.ToUpper() == "P09" && s.Defec
 var checkResult_TBC016 = 4;
 if (checkInfoList_TBC016.Any())
 {
-checkResult_TBC016 = checkInfoList_TBC016.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC016 = checkInfoList_TBC016.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -468,7 +468,7 @@ s =>(s.PartCode.ToUpper() == "C012" && s.PlaceCode.ToUpper() == "P07" && s.Defec
 var checkResult_TBC017 = 4;
 if (checkInfoList_TBC017.Any())
 {
-checkResult_TBC017 = checkInfoList_TBC017.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC017 = checkInfoList_TBC017.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -500,7 +500,7 @@ s =>(s.PartCode.ToUpper() == "C033" && s.PlaceCode.ToUpper() == "P10" && s.Defec
 var checkResult_TBC018 = 4;
 if (checkInfoList_TBC018.Any())
 {
-checkResult_TBC018 = checkInfoList_TBC018.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC018 = checkInfoList_TBC018.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -532,7 +532,7 @@ s =>(s.PartCode.ToUpper() == "C033" && s.PlaceCode.ToUpper() == "P08" && s.Defec
 var checkResult_TBC019 = 4;
 if (checkInfoList_TBC019.Any())
 {
-checkResult_TBC019 = checkInfoList_TBC019.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC019 = checkInfoList_TBC019.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -564,7 +564,7 @@ s =>(s.PartCode.ToUpper() == "C033" && s.PlaceCode.ToUpper() == "P09" && s.Defec
 var checkResult_TBC020 = 4;
 if (checkInfoList_TBC020.Any())
 {
-checkResult_TBC020 = checkInfoList_TBC020.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC020 = checkInfoList_TBC020.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -596,7 +596,7 @@ s =>(s.PartCode.ToUpper() == "C033" && s.PlaceCode.ToUpper() == "P07" && s.Defec
 var checkResult_TBC021 = 4;
 if (checkInfoList_TBC021.Any())
 {
-checkResult_TBC021 = checkInfoList_TBC021.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC021 = checkInfoList_TBC021.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -628,7 +628,7 @@ s =>(s.PartCode.ToUpper() == "C007" && s.PlaceCode.ToUpper() == "P00" && s.Defec
 var checkResult_TBC022 = 4;
 if (checkInfoList_TBC022.Any())
 {
-checkResult_TBC022 = checkInfoList_TBC022.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC022 = checkInfoList_TBC022.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -674,7 +674,7 @@ s =>(s.PartCode.ToUpper() == "C060" && s.PlaceCode.ToUpper() == "P00" && s.Defec
 var checkResult_TBC023 = 4;
 if (checkInfoList_TBC023.Any())
 {
-checkResult_TBC023 = checkInfoList_TBC023.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC023 = checkInfoList_TBC023.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -704,7 +704,7 @@ s =>(s.PartCode.ToUpper() == "C018" && s.PlaceCode.ToUpper() == "P00" && s.Defec
 var checkResult_TBC024 = 4;
 if (checkInfoList_TBC024.Any())
 {
-checkResult_TBC024 = checkInfoList_TBC024.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC024 = checkInfoList_TBC024.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -729,7 +729,7 @@ s =>(s.PartCode.ToUpper() == "C028" && s.PlaceCode.ToUpper() == "P03" && s.Defec
 var checkResult_TBC025 = 4;
 if (checkInfoList_TBC025.Any())
 {
-checkResult_TBC025 = checkInfoList_TBC025.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC025 = checkInfoList_TBC025.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -754,7 +754,7 @@ s =>(s.PartCode.ToUpper() == "C028" && s.PlaceCode.ToUpper() == "P04" && s.Defec
 var checkResult_TBC026 = 4;
 if (checkInfoList_TBC026.Any())
 {
-checkResult_TBC026 = checkInfoList_TBC026.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC026 = checkInfoList_TBC026.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -797,7 +797,7 @@ s =>(s.PartCode.ToUpper() == "C220" && s.PlaceCode.ToUpper() == "P08" && s.Defec
 var checkResult_TBC027 = 4;
 if (checkInfoList_TBC027.Any())
 {
-checkResult_TBC027 = checkInfoList_TBC027.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC027 = checkInfoList_TBC027.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -853,7 +853,7 @@ s =>(s.PartCode.ToUpper() == "C081" && s.PlaceCode.ToUpper() == "P06" && s.Defec
 var checkResult_TBC031 = 4;
 if (checkInfoList_TBC031.Any())
 {
-checkResult_TBC031 = checkInfoList_TBC031.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC031 = checkInfoList_TBC031.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -886,7 +886,7 @@ s =>(s.PartCode.ToUpper() == "C080" && s.PlaceCode.ToUpper() == "P06" && s.Defec
 var checkResult_TBC032 = 4;
 if (checkInfoList_TBC032.Any())
 {
-checkResult_TBC032 = checkInfoList_TBC032.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC032 = checkInfoList_TBC032.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -911,7 +911,7 @@ s =>(s.PartCode.ToUpper() == "C044" && s.PlaceCode.ToUpper() == "P03" && s.Defec
 var checkResult_TBC033 = 4;
 if (checkInfoList_TBC033.Any())
 {
-checkResult_TBC033 = checkInfoList_TBC033.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC033 = checkInfoList_TBC033.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -936,7 +936,7 @@ s =>(s.PartCode.ToUpper() == "C044" && s.PlaceCode.ToUpper() == "P04" && s.Defec
 var checkResult_TBC034 = 4;
 if (checkInfoList_TBC034.Any())
 {
-checkResult_TBC034 = checkInfoList_TBC034.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC034 = checkInfoList_TBC034.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -965,7 +965,7 @@ s =>(s.PartCode.ToUpper() == "C031" && s.PlaceCode.ToUpper() == "P07" && s.Defec
 var checkResult_TBC035 = 4;
 if (checkInfoList_TBC035.Any())
 {
-checkResult_TBC035 = checkInfoList_TBC035.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC035 = checkInfoList_TBC035.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -989,7 +989,7 @@ s =>(s.PartCode.ToUpper() == "C043" && s.PlaceCode.ToUpper() == "P05" && s.Defec
 var checkResult_TBC036 = 4;
 if (checkInfoList_TBC036.Any())
 {
-checkResult_TBC036 = checkInfoList_TBC036.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC036 = checkInfoList_TBC036.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -1013,7 +1013,7 @@ s =>(s.PartCode.ToUpper() == "C043" && s.PlaceCode.ToUpper() == "P06" && s.Defec
 var checkResult_TBC037 = 4;
 if (checkInfoList_TBC037.Any())
 {
-checkResult_TBC037 = checkInfoList_TBC037.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC037 = checkInfoList_TBC037.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -1046,7 +1046,7 @@ s =>(s.PartCode.ToUpper() == "C062" && s.PlaceCode.ToUpper() == "P07" && s.Defec
 var checkResult_TBC038 = 4;
 if (checkInfoList_TBC038.Any())
 {
-checkResult_TBC038 = checkInfoList_TBC038.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC038 = checkInfoList_TBC038.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -1076,7 +1076,7 @@ s =>(s.PartCode.ToUpper() == "C067" && s.PlaceCode.ToUpper() == "P00" && s.Defec
 var checkResult_TBC039 = 4;
 if (checkInfoList_TBC039.Any())
 {
-checkResult_TBC039 = checkInfoList_TBC039.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC039 = checkInfoList_TBC039.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -1105,7 +1105,7 @@ s =>(s.PartCode.ToUpper() == "C065" && s.PlaceCode.ToUpper() == "P00" && s.Defec
 var checkResult_TBC041 = 4;
 if (checkInfoList_TBC041.Any())
 {
-checkResult_TBC041 = checkInfoList_TBC041.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC041 = checkInfoList_TBC041.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -1127,7 +1127,7 @@ s =>(s.PartCode.ToUpper() == "C137" && s.PlaceCode.ToUpper() == "P00" && s.Defec
 var checkResult_TBC042 = 4;
 if (checkInfoList_TBC042.Any())
 {
-checkResult_TBC042 = checkInfoList_TBC042.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC042 = checkInfoList_TBC042.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -1171,7 +1171,7 @@ s =>(s.PartCode.ToUpper() == "C048" && s.PlaceCode.ToUpper() == "P19" && s.Defec
 var checkResult_TBC043 = 4;
 if (checkInfoList_TBC043.Any())
 {
-checkResult_TBC043 = checkInfoList_TBC043.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC043 = checkInfoList_TBC043.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -1193,7 +1193,7 @@ s =>(s.PartCode.ToUpper() == "C063" && s.PlaceCode.ToUpper() == "P00" && s.Defec
 var checkResult_TBC044 = 4;
 if (checkInfoList_TBC044.Any())
 {
-checkResult_TBC044 = checkInfoList_TBC044.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC044 = checkInfoList_TBC044.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -1215,7 +1215,7 @@ s =>(s.PartCode.ToUpper() == "C088" && s.PlaceCode.ToUpper() == "P00" && s.Defec
 var checkResult_TBC045 = 4;
 if (checkInfoList_TBC045.Any())
 {
-checkResult_TBC045 = checkInfoList_TBC045.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC045 = checkInfoList_TBC045.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -1237,7 +1237,7 @@ s =>(s.PartCode.ToUpper() == "C030" && s.PlaceCode.ToUpper() == "P00" && s.Defec
 var checkResult_TBC046 = 4;
 if (checkInfoList_TBC046.Any())
 {
-checkResult_TBC046 = checkInfoList_TBC046.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC046 = checkInfoList_TBC046.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -1275,7 +1275,7 @@ s =>(s.PartCode.ToUpper() == "C043" && s.PlaceCode.ToUpper() == "P05" && s.Defec
 var checkResult_TBC048 = 4;
 if (checkInfoList_TBC048.Any())
 {
-checkResult_TBC048 = checkInfoList_TBC048.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC048 = checkInfoList_TBC048.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -1323,7 +1323,7 @@ s =>(s.PartCode.ToUpper() == "C077" && s.PlaceCode.ToUpper() == "P02" && s.Defec
 var checkResult_TBC049 = 4;
 if (checkInfoList_TBC049.Any())
 {
-checkResult_TBC049 = checkInfoList_TBC049.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC049 = checkInfoList_TBC049.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -1383,7 +1383,7 @@ s =>(s.PartCode.ToUpper() == "C082" && s.PlaceCode.ToUpper() == "P05" && s.Defec
 var checkResult_TBC051 = 4;
 if (checkInfoList_TBC051.Any())
 {
-checkResult_TBC051 = checkInfoList_TBC051.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC051 = checkInfoList_TBC051.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -1407,7 +1407,7 @@ s =>(s.PartCode.ToUpper() == "C087" && s.PlaceCode.ToUpper() == "P00" && s.Defec
 var checkResult_TBC052 = 4;
 if (checkInfoList_TBC052.Any())
 {
-checkResult_TBC052 = checkInfoList_TBC052.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC052 = checkInfoList_TBC052.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -1431,7 +1431,7 @@ s =>(s.PartCode.ToUpper() == "C090" && s.PlaceCode.ToUpper() == "P00" && s.Defec
 var checkResult_TBC053 = 4;
 if (checkInfoList_TBC053.Any())
 {
-checkResult_TBC053 = checkInfoList_TBC053.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC053 = checkInfoList_TBC053.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -1474,7 +1474,7 @@ s =>(s.PartCode.ToUpper() == "C032" && s.PlaceCode.ToUpper() == "P07" && s.Defec
 var checkResult_TBC054 = 4;
 if (checkInfoList_TBC054.Any())
 {
-checkResult_TBC054 = checkInfoList_TBC054.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC054 = checkInfoList_TBC054.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -1503,7 +1503,7 @@ s =>(s.PartCode.ToUpper() == "C027" && s.PlaceCode.ToUpper() == "P02" && s.Defec
 var checkResult_TBC055 = 4;
 if (checkInfoList_TBC055.Any())
 {
-checkResult_TBC055 = checkInfoList_TBC055.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC055 = checkInfoList_TBC055.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -1525,7 +1525,7 @@ s =>(s.PartCode.ToUpper() == "C057" && s.PlaceCode.ToUpper() == "P00" && s.Defec
 var checkResult_TBC056 = 4;
 if (checkInfoList_TBC056.Any())
 {
-checkResult_TBC056 = checkInfoList_TBC056.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC056 = checkInfoList_TBC056.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -1558,7 +1558,7 @@ s =>(s.PartCode.ToUpper() == "C031" && s.PlaceCode.ToUpper() == "P07" && s.Defec
 var checkResult_TBC057 = 4;
 if (checkInfoList_TBC057.Any())
 {
-checkResult_TBC057 = checkInfoList_TBC057.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC057 = checkInfoList_TBC057.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -1588,7 +1588,7 @@ s =>(s.PartCode.ToUpper() == "C136" && s.PlaceCode.ToUpper() == "P00" && s.Defec
 var checkResult_TBC058 = 4;
 if (checkInfoList_TBC058.Any())
 {
-checkResult_TBC058 = checkInfoList_TBC058.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC058 = checkInfoList_TBC058.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -1614,7 +1614,7 @@ s =>(s.PartCode.ToUpper() == "C214" && s.PlaceCode.ToUpper() == "P00" && s.Defec
 var checkResult_TBC059 = 4;
 if (checkInfoList_TBC059.Any())
 {
-checkResult_TBC059 = checkInfoList_TBC059.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC059 = checkInfoList_TBC059.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -1636,7 +1636,7 @@ s =>(s.PartCode.ToUpper() == "C078" && s.PlaceCode.ToUpper() == "P00" && s.Defec
 var checkResult_TBC060 = 4;
 if (checkInfoList_TBC060.Any())
 {
-checkResult_TBC060 = checkInfoList_TBC060.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC060 = checkInfoList_TBC060.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -1659,7 +1659,7 @@ s =>(s.PartCode.ToUpper() == "C051" && s.PlaceCode.ToUpper() == "P00" && s.Defec
 var checkResult_TBC061 = 4;
 if (checkInfoList_TBC061.Any())
 {
-checkResult_TBC061 = checkInfoList_TBC061.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC061 = checkInfoList_TBC061.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -1681,7 +1681,7 @@ s =>(s.PartCode.ToUpper() == "C218" && s.PlaceCode.ToUpper() == "P00" && s.Defec
 var checkResult_TBC062 = 4;
 if (checkInfoList_TBC062.Any())
 {
-checkResult_TBC062 = checkInfoList_TBC062.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC062 = checkInfoList_TBC062.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -1710,7 +1710,7 @@ s =>(s.PartCode.ToUpper() == "C180" && s.PlaceCode.ToUpper() == "P11" && s.Defec
 var checkResult_TBC063 = 4;
 if (checkInfoList_TBC063.Any())
 {
-checkResult_TBC063 = checkInfoList_TBC063.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC063 = checkInfoList_TBC063.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -1732,7 +1732,7 @@ s =>(s.PartCode.ToUpper() == "P226" && s.PlaceCode.ToUpper() == "P00" && s.Defec
 var checkResult_TBC064 = 4;
 if (checkInfoList_TBC064.Any())
 {
-checkResult_TBC064 = checkInfoList_TBC064.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC064 = checkInfoList_TBC064.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -1754,7 +1754,7 @@ s =>(s.PartCode.ToUpper() == "C065" && s.PlaceCode.ToUpper() == "P00" && s.Defec
 var checkResult_TBC065 = 4;
 if (checkInfoList_TBC065.Any())
 {
-checkResult_TBC065 = checkInfoList_TBC065.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC065 = checkInfoList_TBC065.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -1778,7 +1778,7 @@ s =>(s.PartCode.ToUpper() == "C065" && s.PlaceCode.ToUpper() == "P00" && s.Defec
 var checkResult_TBC066 = 4;
 if (checkInfoList_TBC066.Any())
 {
-checkResult_TBC066 = checkInfoList_TBC066.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC066 = checkInfoList_TBC066.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -1808,7 +1808,7 @@ s =>(s.PartCode.ToUpper() == "C065" && s.PlaceCode.ToUpper() == "P00" && s.Defec
 var checkResult_TBC067 = 4;
 if (checkInfoList_TBC067.Any())
 {
-checkResult_TBC067 = checkInfoList_TBC067.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC067 = checkInfoList_TBC067.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -1831,7 +1831,7 @@ s =>(s.PartCode.ToUpper() == "C070" && s.PlaceCode.ToUpper() == "P00" && s.Defec
 var checkResult_TBC068 = 4;
 if (checkInfoList_TBC068.Any())
 {
-checkResult_TBC068 = checkInfoList_TBC068.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC068 = checkInfoList_TBC068.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -1939,7 +1939,7 @@ s =>(s.PartCode.ToUpper() == "C070" && s.PlaceCode.ToUpper() == "P00" && s.Defec
 var checkResult_TBC080 = 4;
 if (checkInfoList_TBC080.Any())
 {
-checkResult_TBC080 = checkInfoList_TBC080.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC080 = checkInfoList_TBC080.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -1961,7 +1961,7 @@ s =>(s.PartCode.ToUpper() == "P229" && s.PlaceCode.ToUpper() == "P00" && s.Defec
 var checkResult_TBC081 = 4;
 if (checkInfoList_TBC081.Any())
 {
-checkResult_TBC081 = checkInfoList_TBC081.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC081 = checkInfoList_TBC081.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -1983,7 +1983,7 @@ s =>(s.PartCode.ToUpper() == "C053" && s.PlaceCode.ToUpper() == "P00" && s.Defec
 var checkResult_TBC082 = 4;
 if (checkInfoList_TBC082.Any())
 {
-checkResult_TBC082 = checkInfoList_TBC082.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC082 = checkInfoList_TBC082.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -2013,7 +2013,7 @@ s =>(s.PartCode.ToUpper() == "C170" && s.PlaceCode.ToUpper() == "P00" && s.Defec
 var checkResult_TBC083 = 4;
 if (checkInfoList_TBC083.Any())
 {
-checkResult_TBC083 = checkInfoList_TBC083.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC083 = checkInfoList_TBC083.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -2037,7 +2037,7 @@ s =>(s.PartCode.ToUpper() == "C169" && s.PlaceCode.ToUpper() == "P00" && s.Defec
 var checkResult_TBC084 = 4;
 if (checkInfoList_TBC084.Any())
 {
-checkResult_TBC084 = checkInfoList_TBC084.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC084 = checkInfoList_TBC084.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -2062,7 +2062,7 @@ s =>(s.PartCode.ToUpper() == "C222" && s.PlaceCode.ToUpper() == "P00" && s.Defec
 var checkResult_TBC085 = 4;
 if (checkInfoList_TBC085.Any())
 {
-checkResult_TBC085 = checkInfoList_TBC085.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC085 = checkInfoList_TBC085.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -2087,7 +2087,7 @@ s =>(s.PartCode.ToUpper() == "C040" && s.PlaceCode.ToUpper() == "P08" && s.Defec
 var checkResult_TBC086 = 4;
 if (checkInfoList_TBC086.Any())
 {
-checkResult_TBC086 = checkInfoList_TBC086.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC086 = checkInfoList_TBC086.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -2112,7 +2112,7 @@ s =>(s.PartCode.ToUpper() == "C103" && s.PlaceCode.ToUpper() == "P12" && s.Defec
 var checkResult_TBC087 = 4;
 if (checkInfoList_TBC087.Any())
 {
-checkResult_TBC087 = checkInfoList_TBC087.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC087 = checkInfoList_TBC087.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -2148,7 +2148,7 @@ s =>(s.PartCode.ToUpper() == "C141" && s.PlaceCode.ToUpper() == "P00" && s.Defec
 var checkResult_TBC089 = 4;
 if (checkInfoList_TBC089.Any())
 {
-checkResult_TBC089 = checkInfoList_TBC089.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC089 = checkInfoList_TBC089.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -2206,7 +2206,7 @@ s =>(s.PartCode.ToUpper() == "C029" && s.PlaceCode.ToUpper() == "P00" && s.Defec
 var checkResult_TBC095 = 4;
 if (checkInfoList_TBC095.Any())
 {
-checkResult_TBC095 = checkInfoList_TBC095.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC095 = checkInfoList_TBC095.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -2228,7 +2228,7 @@ s =>(s.PartCode.ToUpper() == "C124" && s.PlaceCode.ToUpper() == "P17" && s.Defec
 var checkResult_TBC096 = 4;
 if (checkInfoList_TBC096.Any())
 {
-checkResult_TBC096 = checkInfoList_TBC096.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC096 = checkInfoList_TBC096.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -2250,7 +2250,7 @@ s =>(s.PartCode.ToUpper() == "P233" && s.PlaceCode.ToUpper() == "P00" && s.Defec
 var checkResult_TBC097 = 4;
 if (checkInfoList_TBC097.Any())
 {
-checkResult_TBC097 = checkInfoList_TBC097.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC097 = checkInfoList_TBC097.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -2272,7 +2272,7 @@ s =>(s.PartCode.ToUpper() == "C122" && s.PlaceCode.ToUpper() == "P17" && s.Defec
 var checkResult_TBC098 = 4;
 if (checkInfoList_TBC098.Any())
 {
-checkResult_TBC098 = checkInfoList_TBC098.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC098 = checkInfoList_TBC098.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {
@@ -2294,7 +2294,7 @@ s =>(s.PartCode.ToUpper() == "C054" && s.PlaceCode.ToUpper() == "P00" && s.Defec
 var checkResult_TBC099 = 4;
 if (checkInfoList_TBC099.Any())
 {
-checkResult_TBC099 = checkInfoList_TBC099.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 1 : 2;
+checkResult_TBC099 = checkInfoList_TBC099.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
 }
 else
 {

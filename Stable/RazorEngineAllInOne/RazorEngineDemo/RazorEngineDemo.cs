@@ -94,6 +94,7 @@ namespace RazorEngineDemo
 
             Engine.Razor = service;
             var result = string.Empty;
+            
             if (service.IsTemplateCached("template02.cshtml", null))
             {
                 result = service.Run("template02.cshtml", typeof(ReportModel),
