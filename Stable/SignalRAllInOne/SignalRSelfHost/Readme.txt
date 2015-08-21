@@ -1,0 +1,3 @@
+﻿Install-Package Microsoft.AspNet.SignalR.SelfHost
+
+Install-Package Microsoft.Owin.Cors
