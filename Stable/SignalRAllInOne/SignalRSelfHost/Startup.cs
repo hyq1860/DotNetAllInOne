@@ -12,8 +12,10 @@ namespace SignalRSelfHost
     {
         public void Configuration(IAppBuilder app)
         {
-            app.UseCors(CorsOptions.AllowAll);
-            app.MapSignalR();
+            //app.UseCors(CorsOptions.AllowAll);
+            //app.MapSignalR();
+
+            Microsoft.AspNet.SignalR.StockTicker.StockStartup.ConfigureSignalR(app);
         }
     }
 }
