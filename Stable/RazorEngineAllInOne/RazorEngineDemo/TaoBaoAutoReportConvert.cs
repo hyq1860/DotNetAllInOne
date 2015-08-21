@@ -53,7 +53,7 @@ namespace RazorEngineDemo
 
         public List<TaoBaoCheckItemRule> GeTaoBaoCheckItemRules()
         {
-            FileStream fs=new FileStream(basePath+"全部数据.xlsx",FileMode.Open);
+            FileStream fs = new FileStream(basePath + "268v全部数据.xlsx", FileMode.Open);
             IWorkbook workbook = new XSSFWorkbook(fs);
             ISheet sheet1 = workbook.GetSheetAt(0);
             var result=new List<TaoBaoCheckItemRule>();

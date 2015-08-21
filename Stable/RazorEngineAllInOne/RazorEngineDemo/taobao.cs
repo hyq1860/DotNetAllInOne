@@ -771,23 +771,8 @@ tbCheckModule.TbCheckItemDetails.Add(tbCheckItemDetail_TBC026);
 TbCheckItemDetail tbCheckItemDetail_TBC027 = new TbCheckItemDetail();
 tbCheckItemDetail_TBC027.Name="左前轮毂";
 var checkInfoList_TBC027 = carReportModel.CheckInfoTotalList.Where(
-s =>(s.PartCode.ToUpper() == "C220" && s.PlaceCode.ToUpper() == "P08" && s.DefectCode.ToUpper() == "T06" && s.DValueCode.ToUpper()=="V034") ||
-(s.PartCode.ToUpper() == "C220" && s.PlaceCode.ToUpper() == "P07" && s.DefectCode.ToUpper() == "T06" && s.DValueCode.ToUpper()=="V034") ||
-(s.PartCode.ToUpper() == "C220" && s.PlaceCode.ToUpper() == "P10" && s.DefectCode.ToUpper() == "T06" && s.DValueCode.ToUpper()=="V034") ||
-(s.PartCode.ToUpper() == "C220" && s.PlaceCode.ToUpper() == "P09" && s.DefectCode.ToUpper() == "T06" && s.DValueCode.ToUpper()=="V034") ||
-(s.PartCode.ToUpper() == "C220" && s.PlaceCode.ToUpper() == "P08" && s.DefectCode.ToUpper() == "T01" && s.DValueCode.ToUpper()=="V006") ||
-(s.PartCode.ToUpper() == "C220" && s.PlaceCode.ToUpper() == "P07" && s.DefectCode.ToUpper() == "T01" && s.DValueCode.ToUpper()=="V006") ||
+s =>(s.PartCode.ToUpper() == "C220" && s.PlaceCode.ToUpper() == "P10" && s.DefectCode.ToUpper() == "T06" && s.DValueCode.ToUpper()=="V034") ||
 (s.PartCode.ToUpper() == "C220" && s.PlaceCode.ToUpper() == "P10" && s.DefectCode.ToUpper() == "T01" && s.DValueCode.ToUpper()=="V006") ||
-(s.PartCode.ToUpper() == "C220" && s.PlaceCode.ToUpper() == "P09" && s.DefectCode.ToUpper() == "T01" && s.DValueCode.ToUpper()=="V006") ||
-(s.PartCode.ToUpper() == "C061" && s.PlaceCode.ToUpper() == "P08" && s.DefectCode.ToUpper() == "T01" && s.DValueCode.ToUpper()=="V002") ||
-(s.PartCode.ToUpper() == "C061" && s.PlaceCode.ToUpper() == "P08" && s.DefectCode.ToUpper() == "T01" && s.DValueCode.ToUpper()=="V001") ||
-(s.PartCode.ToUpper() == "C061" && s.PlaceCode.ToUpper() == "P08" && s.DefectCode.ToUpper() == "T06" && s.DValueCode.ToUpper()=="V033") ||
-(s.PartCode.ToUpper() == "C061" && s.PlaceCode.ToUpper() == "P07" && s.DefectCode.ToUpper() == "T01" && s.DValueCode.ToUpper()=="V002") ||
-(s.PartCode.ToUpper() == "C061" && s.PlaceCode.ToUpper() == "P07" && s.DefectCode.ToUpper() == "T01" && s.DValueCode.ToUpper()=="V001") ||
-(s.PartCode.ToUpper() == "C061" && s.PlaceCode.ToUpper() == "P07" && s.DefectCode.ToUpper() == "T06" && s.DValueCode.ToUpper()=="V033") ||
-(s.PartCode.ToUpper() == "C061" && s.PlaceCode.ToUpper() == "P09" && s.DefectCode.ToUpper() == "T01" && s.DValueCode.ToUpper()=="V002") ||
-(s.PartCode.ToUpper() == "C061" && s.PlaceCode.ToUpper() == "P09" && s.DefectCode.ToUpper() == "T01" && s.DValueCode.ToUpper()=="V001") ||
-(s.PartCode.ToUpper() == "C061" && s.PlaceCode.ToUpper() == "P09" && s.DefectCode.ToUpper() == "T06" && s.DValueCode.ToUpper()=="V033") ||
 (s.PartCode.ToUpper() == "C061" && s.PlaceCode.ToUpper() == "P10" && s.DefectCode.ToUpper() == "T01" && s.DValueCode.ToUpper()=="V002") ||
 (s.PartCode.ToUpper() == "C061" && s.PlaceCode.ToUpper() == "P10" && s.DefectCode.ToUpper() == "T01" && s.DValueCode.ToUpper()=="V001") ||
 (s.PartCode.ToUpper() == "C061" && s.PlaceCode.ToUpper() == "P10" && s.DefectCode.ToUpper() == "T06" && s.DValueCode.ToUpper()=="V033") ||
@@ -813,21 +798,78 @@ tbCheckModule.TbCheckItemDetails.Add(tbCheckItemDetail_TBC027);
 #region 左后轮毂
 TbCheckItemDetail tbCheckItemDetail_TBC028 = new TbCheckItemDetail();
 tbCheckItemDetail_TBC028.Name="左后轮毂";
-tbCheckItemDetail_TBC028.CheckResult = 4;
+var checkInfoList_TBC028 = carReportModel.CheckInfoTotalList.Where(
+s =>(s.PartCode.ToUpper() == "C220" && s.PlaceCode.ToUpper() == "P09" && s.DefectCode.ToUpper() == "T06" && s.DValueCode.ToUpper()=="V034") ||
+(s.PartCode.ToUpper() == "C220" && s.PlaceCode.ToUpper() == "P09" && s.DefectCode.ToUpper() == "T01" && s.DValueCode.ToUpper()=="V006") ||
+(s.PartCode.ToUpper() == "C061" && s.PlaceCode.ToUpper() == "P09" && s.DefectCode.ToUpper() == "T01" && s.DValueCode.ToUpper()=="V002") ||
+(s.PartCode.ToUpper() == "C061" && s.PlaceCode.ToUpper() == "P09" && s.DefectCode.ToUpper() == "T01" && s.DValueCode.ToUpper()=="V001") ||
+(s.PartCode.ToUpper() == "C061" && s.PlaceCode.ToUpper() == "P09" && s.DefectCode.ToUpper() == "T06" && s.DValueCode.ToUpper()=="V033")
+);
+var checkResult_TBC028 = 4;
+if (checkInfoList_TBC028.Any())
+{
+checkResult_TBC028 = checkInfoList_TBC028.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
+}
+else
+{
+//没有认为是没问题
+ checkResult_TBC028 = 1;
+}
+var tbCheckItemDesc_TBC028 = tbCheckModule.TbCheckItemDescs.FirstOrDefault(s => s.Key == checkResult_TBC028);
+if (tbCheckItemDesc_TBC028 != null)
+tbCheckItemDetail_TBC028.CheckResult = tbCheckItemDesc_TBC028.Key;
 tbCheckModule.TbCheckItemDetails.Add(tbCheckItemDetail_TBC028);
 #endregion
 
 #region 右前轮毂
 TbCheckItemDetail tbCheckItemDetail_TBC029 = new TbCheckItemDetail();
 tbCheckItemDetail_TBC029.Name="右前轮毂";
-tbCheckItemDetail_TBC029.CheckResult = 4;
+var checkInfoList_TBC029 = carReportModel.CheckInfoTotalList.Where(
+s =>(s.PartCode.ToUpper() == "C220" && s.PlaceCode.ToUpper() == "P08" && s.DefectCode.ToUpper() == "T06" && s.DValueCode.ToUpper()=="V034") ||
+(s.PartCode.ToUpper() == "C220" && s.PlaceCode.ToUpper() == "P08" && s.DefectCode.ToUpper() == "T01" && s.DValueCode.ToUpper()=="V006") ||
+(s.PartCode.ToUpper() == "C061" && s.PlaceCode.ToUpper() == "P08" && s.DefectCode.ToUpper() == "T01" && s.DValueCode.ToUpper()=="V002") ||
+(s.PartCode.ToUpper() == "C061" && s.PlaceCode.ToUpper() == "P08" && s.DefectCode.ToUpper() == "T01" && s.DValueCode.ToUpper()=="V001") ||
+(s.PartCode.ToUpper() == "C061" && s.PlaceCode.ToUpper() == "P08" && s.DefectCode.ToUpper() == "T06" && s.DValueCode.ToUpper()=="V033")
+);
+var checkResult_TBC029 = 4;
+if (checkInfoList_TBC029.Any())
+{
+checkResult_TBC029 = checkInfoList_TBC029.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
+}
+else
+{
+//没有认为是没问题
+ checkResult_TBC029 = 1;
+}
+var tbCheckItemDesc_TBC029 = tbCheckModule.TbCheckItemDescs.FirstOrDefault(s => s.Key == checkResult_TBC029);
+if (tbCheckItemDesc_TBC029 != null)
+tbCheckItemDetail_TBC029.CheckResult = tbCheckItemDesc_TBC029.Key;
 tbCheckModule.TbCheckItemDetails.Add(tbCheckItemDetail_TBC029);
 #endregion
 
 #region 右后轮毂
 TbCheckItemDetail tbCheckItemDetail_TBC030 = new TbCheckItemDetail();
 tbCheckItemDetail_TBC030.Name="右后轮毂";
-tbCheckItemDetail_TBC030.CheckResult = 4;
+var checkInfoList_TBC030 = carReportModel.CheckInfoTotalList.Where(
+s =>(s.PartCode.ToUpper() == "C220" && s.PlaceCode.ToUpper() == "P07" && s.DefectCode.ToUpper() == "T06" && s.DValueCode.ToUpper()=="V034") ||
+(s.PartCode.ToUpper() == "C220" && s.PlaceCode.ToUpper() == "P07" && s.DefectCode.ToUpper() == "T01" && s.DValueCode.ToUpper()=="V006") ||
+(s.PartCode.ToUpper() == "C061" && s.PlaceCode.ToUpper() == "P07" && s.DefectCode.ToUpper() == "T01" && s.DValueCode.ToUpper()=="V002") ||
+(s.PartCode.ToUpper() == "C061" && s.PlaceCode.ToUpper() == "P07" && s.DefectCode.ToUpper() == "T01" && s.DValueCode.ToUpper()=="V001") ||
+(s.PartCode.ToUpper() == "C061" && s.PlaceCode.ToUpper() == "P07" && s.DefectCode.ToUpper() == "T06" && s.DValueCode.ToUpper()=="V033")
+);
+var checkResult_TBC030 = 4;
+if (checkInfoList_TBC030.Any())
+{
+checkResult_TBC030 = checkInfoList_TBC030.Any(s => !string.IsNullOrEmpty(s.ConfValue)) ? 2 : 1;
+}
+else
+{
+//没有认为是没问题
+ checkResult_TBC030 = 1;
+}
+var tbCheckItemDesc_TBC030 = tbCheckModule.TbCheckItemDescs.FirstOrDefault(s => s.Key == checkResult_TBC030);
+if (tbCheckItemDesc_TBC030 != null)
+tbCheckItemDetail_TBC030.CheckResult = tbCheckItemDesc_TBC030.Key;
 tbCheckModule.TbCheckItemDetails.Add(tbCheckItemDetail_TBC030);
 #endregion
 

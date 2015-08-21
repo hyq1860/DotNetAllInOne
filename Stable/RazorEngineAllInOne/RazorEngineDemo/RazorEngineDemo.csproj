@@ -84,6 +84,7 @@
     <Compile Include="ViewModel\TaoBaoCheckItem.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="268v全部数据.xlsx" />
     <None Include="Views\taobaomap.cshtml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -94,7 +95,6 @@
     <None Include="Views\template02.cshtml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="全部数据.xlsx" />
     <None Include="淘宝检测项.xlsx" />
   </ItemGroup>
   <ItemGroup>
