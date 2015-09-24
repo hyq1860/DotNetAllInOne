@@ -1,5 +1,6 @@
 ﻿@using RazorEngine
 @using RazorEngineDemo.ViewModel
+@using System.Web.Mvc.Html;
 @inherits RazorEngine.Templating.TemplateBase<ReportModel>
 <!DOCTYPE html>
 
@@ -42,5 +43,6 @@
         @s7
         @s8
     }
+    @Raw("<span>aaa</span>")
 </body>
 </html>
